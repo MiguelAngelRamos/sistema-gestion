@@ -12,5 +12,5 @@ class Videojuego:
         return f"Nuevo precio del video juego : {self.precio}"
 
     def mostrar_info_desarrolladora(self):
-        return f"Desarrolladora: {self.desarrolladora}"
+        return f"Desarrolladora: {self.desarrolladora}, País: {self.desarrolladora.pais}"
 
