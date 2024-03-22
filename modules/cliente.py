@@ -8,3 +8,16 @@ class Cliente:
     def recargar_saldo(self, monto):
         self.saldo += monto
         return f"Saldo actualizado, Nuevo saldo: {self.saldo}"
+
+
+cliente = {}
+def registrar_cliente():
+    print("\n Registrar un Nuevo Cliente")
+    id_cliente = input("ID: ")
+    nombre = input("Nombre: ")
+    saldo = float(input("Saldo: "))
+    preferencia_videojuego = input("Preferencia de video juego (opcional): ")
+    cliente = Cliente(id_cliente, nombre, saldo, preferencia_videojuego)
+    cliente[id] = cliente
+    print("Cliente registrado exitosamente")
+
