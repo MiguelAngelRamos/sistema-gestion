@@ -1,3 +1,5 @@
+from modules.cliente import registrar_cliente
+
 def menu_principal():
     while True:
         print("\n Menu principal de la Tienda de VideoJuegos")
@@ -18,7 +20,7 @@ def menu_principal():
         elif opcion == "3":
             pass
         elif opcion == "4":
-            pass
+            registrar_cliente()
         elif opcion == "5":
             pass
         if opcion == "6":

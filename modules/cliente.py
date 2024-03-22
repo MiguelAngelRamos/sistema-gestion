@@ -10,7 +10,9 @@ class Cliente:
         return f"Saldo actualizado, Nuevo saldo: {self.saldo}"
 
 
-cliente = {}
+dic_cliente = {}
+
+
 def registrar_cliente():
     print("\n Registrar un Nuevo Cliente")
     id_cliente = input("ID: ")
@@ -18,6 +20,5 @@ def registrar_cliente():
     saldo = float(input("Saldo: "))
     preferencia_videojuego = input("Preferencia de video juego (opcional): ")
     cliente = Cliente(id_cliente, nombre, saldo, preferencia_videojuego)
-    cliente[id] = cliente
+    dic_cliente[id] = cliente
     print("Cliente registrado exitosamente")
-
