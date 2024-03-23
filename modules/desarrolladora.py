@@ -5,3 +5,6 @@ class Desarrolladora:
         self.direccion = direccion
         self.pais = pais
         self.es_persona_juridica = es_persona_juridica
+
+# Este diccionario va tener llaves y dentro de llaves instancias de la clase
+dic_desarrolladora = {}
