@@ -27,6 +27,7 @@ def registrar_cliente():
         cliente = Cliente(id_cliente, nombre, saldo, preferencia_videojuego)
         dic_cliente[id_cliente] = cliente
         print("Cliente registrado exitosamente")
+        imprimir_clientes()
     except ValueError as error:
         print(f"Error al registrar el cliente: {error}")
 
