@@ -1,4 +1,6 @@
-from desarrolladora import dic_desarrolladora
+from .desarrolladora import dic_desarrolladoras
+
+
 class Videojuego:
     def __init__(self, codigo, titulo, precio, stock, desarrolladora, genero=None):
         self.codigo = codigo
@@ -26,8 +28,9 @@ def registrar_videojuego():
     stock = input("Stock:")
     RUT_desarrolladora = input("RUT de la desarrolladora")
     genero = input("Genero (opcional)")
-    desarrollada = dic_desarrolladora.get(RUT_desarrolladora)
-    if desarrollada:
+    desarrolladora = dic_desarrolladoras.get(RUT_desarrolladora)
+
+    if desarrolladora:
         videojuego = Videojuego(codigo, titulo, precio, stock, desarrolladora, genero)
         dic_videojuegos[codigo] = videojuego
         print("Videojuego registrado exitosamente. ")
