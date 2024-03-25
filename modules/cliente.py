@@ -1,3 +1,4 @@
+# modules/cliente.py
 from prettytable import PrettyTable
 
 
@@ -48,10 +49,10 @@ def registrar_cliente():
 
 def imprimir_clientes():
     tabla = PrettyTable()
-    tabla.field_names = ["ID", "Nombre", "Saldo", "Preferencia Juego"]
+    tabla.field_names = ["Id", "Nombre", "Saldo", "Preferencia Juego"]
     for obj_cliente in dic_clientes.values():
         tabla.add_row([obj_cliente.id_cliente, obj_cliente.nombre, obj_cliente.saldo, obj_cliente.preferencia_videojuego])
-        print(tabla)
+    print(tabla)
 
 
 def recargar_saldo_cliente():

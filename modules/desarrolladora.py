@@ -1,3 +1,5 @@
+# modules/desarrolladora.py
+
 from prettytable import PrettyTable
 class Desarrolladora:
     def __init__(self, RUT, nombre, direccion, pais, es_persona_juridica):
@@ -32,9 +34,10 @@ def registrar_desarrolladora():
     dic_desarrolladoras[RUT] = desarrolladora
     print("Desarrolladora registrada exitosamente.")
 
+
 def imprimir_desarrolladoras():
     tabla = PrettyTable()
     tabla.field_names = ["RUT", "Nombre", "Direccion", "Pais", "Per. Juridica "]
     for obj_desarrolladora in dic_desarrolladoras.values():
         tabla.add_row([obj_desarrolladora.RUT, obj_desarrolladora.nombre, obj_desarrolladora.direccion, obj_desarrolladora.pais, obj_desarrolladora.es_persona_juridica])
-        print(tabla)
+    print(tabla)

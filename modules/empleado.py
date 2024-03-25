@@ -1,6 +1,10 @@
+# modules/empleado.py
 from prettytable import PrettyTable
-from .videojuego import dic_videojuegos
-from .cliente import dic_clientes
+
+from .cliente import dic_clientes, imprimir_clientes
+from .videojuego import dic_videojuegos, imprimir_videojuegos
+
+
 class Empleado:
     def __init__(self, id_empleado, nombre, comision=0):
         self.id_empleado = id_empleado
@@ -13,8 +17,8 @@ class Empleado:
         if videojuego.stock <= 0:
             return "Venta no realiza: stock insuficiente"
         videojuego.stock -= 1
-        # 1000 * 0.05 = 50
-        self.comision += videojuego.precio * 0.05
+        # 1000 * 0.005 = 5
+        self.comision += videojuego.precio * 0.005
         cliente.saldo -= videojuego.precio
         return f"Venta realizada. Comisión del empleado actualizada : {self.comision}. Saldo del Cliente: {cliente.saldo}."
 
@@ -53,11 +57,14 @@ def imprimir_empleado():
     tabla.field_names = ["ID", "Nombre", "Comision"]
     for obj_empleado in dic_empleados.values():
         tabla.add_row([obj_empleado.id_empleado, obj_empleado.nombre, obj_empleado.comision])
-        print(tabla)
+    print(tabla)
 
 
 def realizar_venta():
     print("\nRealizar Venta")
+    imprimir_empleado()
+    imprimir_clientes()
+    imprimir_videojuegos()
     id_empleado = input("ID del Empleado: ")
     id_cliente = input("ID del Cliente: ")
     codigo_videojuego = input("Código del Videojuego: ")
@@ -75,10 +82,8 @@ def realizar_venta():
     if not videojuego:
         print("Videojuego no encontrado.")
         return
-
     resultado_venta = empleado.vender(videojuego, cliente)
     print(resultado_venta)
-
 
 
 

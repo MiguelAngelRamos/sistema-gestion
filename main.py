@@ -1,3 +1,4 @@
+# main.py es el archivo principal del programa, en este archivo se encuentra el menú principal de la tienda de videojuegos
 from modules.cliente import registrar_cliente, recargar_saldo_cliente
 from modules.desarrolladora import registrar_desarrolladora
 from modules.videojuego import registrar_videojuego, actualizar_precio_videojuego
@@ -25,11 +26,11 @@ def menu_principal():
             registrar_cliente()
         elif opcion == "5":
             realizar_venta()
-        if opcion == "6":
+        elif opcion == "6":
             actualizar_precio_videojuego()
-        if opcion == "7":
+        elif opcion == "7":
             recargar_saldo_cliente()
-        if opcion == "8":
+        elif opcion == "8":
             print("Saliendo del Programa....")
             break
         else:
